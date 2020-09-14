@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "7ee35965-0a6b-486c-adf8-84eed4dad0bf",
+		"name": "company-schema",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAccessToken",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "spring-security-oauth2-read-write-client-password1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "spring-security-oauth2-read-write-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "spring-security-oauth2-read-write-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "reader",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "reader1234",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/my_token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"my_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secured Company Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78097389-532d-4877-b52b-1aeb9d12b252",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "spring-security-oauth2-read-write-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "reader",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "reader1234",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/secured/company",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secured Company Details By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78097389-532d-4877-b52b-1aeb9d12b252",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "spring-security-oauth2-read-write-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/secured/company/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured",
+						"company",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secured Company Details By Name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78097389-532d-4877-b52b-1aeb9d12b252",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "spring-security-oauth2-read-write-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/secured/company/filter?name=Sprite",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured",
+						"company",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Sprite"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Secured Company Detail",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78097389-532d-4877-b52b-1aeb9d12b252",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dr Pepper\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secured/company",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Secured Company Detail",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78097389-532d-4877-b52b-1aeb9d12b252",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 104,\r\n    \"name\": \"Pepper\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/secured/company",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Secured Company Detail By Id",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "78097389-532d-4877-b52b-1aeb9d12b252",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/secured/company/104",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured",
+						"company",
+						"104"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
